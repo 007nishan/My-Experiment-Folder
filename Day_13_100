@@ -1,0 +1,24 @@
+while True:
+  name = input('What is your Name: ')
+  if name == 'exit':
+    break
+  test = input('Let us calculate your result.\nName of the subject: ')
+  total_marks = int(input(f'Total Marks [{test} Exam]: '))
+  marks_scored = int(input(f'Marks obtained in {test} Exam: '))
+  percentage = (marks_scored/total_marks) * 100
+  percentage = round(percentage, 2)
+  letter_grade = ''
+  if percentage >= 90:
+    letter_grade = 'A+'
+  elif percentage >= 80:
+    letter_grade = 'A'
+  elif percentage >= 70:
+    letter_grade = 'B'
+  elif percentage >= 60:
+    letter_grade = 'C'
+  elif percentage >= 50:
+    letter_grade = 'D'
+  elif percentage < 50:
+    letter_grade = 'U'
+  
+  print(f"Result\n------\nName: {name}\nSubject: {test}\nGrade:\033[1:34m {letter_grade}\033[0:0m\n_____________________________")
