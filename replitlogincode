@@ -1,0 +1,19 @@
+import getpass
+
+print('Replit Login System')
+
+def login():
+    while True:
+        name = input('What is your username?: ')
+        if name[0].lower() == 'a':
+            passw = getpass.getpass('Enter your password: ')
+            print('*' * len(passw))
+            if passw.lower() == 'password':
+                print('Welcome to Replit!')
+                break
+            else:
+                print('That is a very wrong password!!')
+        else:
+            print("Whoops! I don't recognize that username!!")
+
+login()
