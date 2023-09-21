@@ -1,0 +1,26 @@
+import random
+print('Infinity Dice 🎲\n')
+side = input('How many sides?')
+
+def roll_dice(side):
+  while True:
+    try:
+      side = int(side)
+      print(random.randint(1,side))
+      again = input('Roll again?\n')
+      if again.lower() == 'yes':
+        side = int(input('How many sides?'))
+      elif again.lower() == 'no':
+        print('Fine. Exiting the Infinity Dice roll!!')
+        break
+      else:
+        print('Invalid input. ')
+        side = int(input('How many sides?'))
+        continue
+    except ValueError:
+      print('That is no integer. Enter a valid integer.')
+      side = input('How many sides?')
+      continue
+
+roll_dice(side)
+
