@@ -1,0 +1,59 @@
+import random
+import time
+
+a = time.time()
+print("**Totally Random One-Million-to-One**\n  ---------------------------------  \nComputer has selected a random number between 0 and 1000000.\nLet us see who is more efficient!! Human or Computer!! Our task is to guess the random number computer has selected. Then, the computer will guess the same in all unbiased terms. Let's see who takes lesser turns and who takes lesser time to get the job done.\nNote: Computer will guide you in your selection. Keep guessing until you get it right. .\n**Rule**\n--------\nEnter a negative number to exit the program.\n--------------------------------------------")
+b = time.time()
+print(f'Time taken till now = {round((b - a), 5)}')
+
+x = int(input('Enter the lower limit: '))
+y = int(input('Enter the upper limit: '))
+random_number = random.randint(x, y)
+count = 1
+"""
+guess = int(input('Guess a number:'))
+print('Your time starts now.')
+c = time.time()
+
+while True:
+    if guess == random_number:
+        d = time.time()
+        print(f'You guessed it right. {random_number} is the right answer.\nIt took you {count} attempts to make a blind though guided search. It took you {d - c} seconds to make this intelligent guess.')
+        break
+    if guess > random_number:
+        count += 1
+        print('Your guess is high. Pick a smaller number.')
+        guess = int(input('Guess a smaller number: '))
+    if guess < random_number:
+        count += 1
+        print('Your guess is low. Pick a greater number.')
+        guess = int(input('Guess a greater number: '))
+    if guess < 0:
+        e = time.time()
+        print(f"Unfortunately, you could not guess the number even in {count} attempts and {e - d} seconds. Now, as you have given up, let's have a look at how the computer performs. {random_number} was the random number by the way.")
+        break
+"""
+counter = 1
+l = (x + y) // 2
+f = time.time()
+
+while True:
+    time.sleep(.09)
+    guess = l
+    if guess < 0:
+        print("Exiting the program.")
+        break
+    elif guess == random_number:
+        g = time.time()
+        print(f"Computer selected {l} and that we know is equal to {random_number}. Hence, it is the right answer. It took the computer {counter} turns and {g - f} seconds.")
+        break
+    elif guess > random_number:
+        y = l - 1
+        l = (x + y) // 2
+        counter += 1
+        print(f"Computer selected {guess} and that we know is greater than {random_number}. Selecting a smaller number...")
+    elif guess < random_number:
+        x = l + 1
+        l = (x + y) // 2
+        counter += 1
+        print(f"Computer selected {guess} and that we know is smaller than {random_number}. Selecting a greater number...")
