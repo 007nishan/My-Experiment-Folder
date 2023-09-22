@@ -23,4 +23,3 @@ def roll_dice(side):
       continue
 
 roll_dice(side)
-
