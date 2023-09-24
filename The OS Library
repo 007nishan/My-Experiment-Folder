@@ -1,0 +1,33 @@
+import random
+import time
+import os
+
+def generate_character_name():
+    first_names = input('"Aiden", "Evelyn", "Fenrir", "Luna", "Gandalf", "Legolas", "Sauron", "Arwen"\nName Your Legend:')
+    character_type = input('Name Your Character["Human", "Elf", "Wizard", "Orc", "Imp"]:')
+    name = first_names + " the Almighty"
+    return name, character_type
+
+def generate_health_stat():
+    return ((random.randint(1, 6) * random.randint(1, 12)) / 2) + 10
+
+def generate_strength_stat():
+    return ((random.randint(1, 6) * random.randint(1, 12)) / 2) + 12
+
+while True:
+    os.system("clear")
+    print("Character Builder\n")
+    name, char_type = generate_character_name()
+    health = int(generate_health_stat())
+    strength = int(generate_strength_stat())
+
+    print(f"Name Your Legend:\n{name}")
+    print(char_type)
+    print("\nStats:")
+    print(f"HEALTH: {health}")
+    print(f"STRENGTH: {strength}\n")
+
+    user_input = input("Press Enter to create another character or type 'exit' to quit: ")
+    if user_input.lower() == 'exit':
+        break
+    time.sleep(1)
