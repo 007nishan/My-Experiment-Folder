@@ -1,0 +1,13 @@
+password = input()
+alpha = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+valid = False
+if 8 >= len(password) and len(password) <= 32:
+    valid = True
+if password[0] in alpha:
+    valid = True
+else:
+    valid = False
+for char in password:
+    if char in "/\\='\" ":
+        valid = False
+print(valid)

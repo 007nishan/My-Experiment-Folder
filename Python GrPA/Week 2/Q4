@@ -1,0 +1,29 @@
+name1 = input()
+dob1 = input()
+name2 = input()
+dob2 = input()
+younger = ''
+if int(dob1[-4:]) > int(dob2[-4:]):
+    younger = name1
+else:
+    younger = name2
+    
+if int(dob1[-4:]) == int(dob2[-4:]):
+    if int(dob1[-7:-5]) > int(dob2[-7:-5]):
+        younger = name1
+    else:
+        younger = name2
+        
+if int(dob1[-4:]) == int(dob2[-4:]) and int(dob1[-7:-5]) == int(dob2[-7:-5]):
+    if int(dob1[:2]) > int(dob2[:2]):
+        younger = name1
+    else:
+        younger = name2
+        
+if int(dob1[-4:]) == int(dob2[-4:]) and int(dob1[-7:-5]) == int(dob2[-7:-5]) and int(dob1[:4]) == int(dob2[:4]):
+    if name1 < name2:
+        younger = name1
+    else:
+        younger = name2
+        
+print(younger)
