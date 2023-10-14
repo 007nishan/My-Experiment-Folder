@@ -1,0 +1,10 @@
+str = input()
+flag = True
+for i in range(len(str)):
+    if str[i] != str[-i - 1]:
+        flag = False
+        break
+if flag:
+    print("PALINDROME")
+else:
+    print("NOT PALINDROME")

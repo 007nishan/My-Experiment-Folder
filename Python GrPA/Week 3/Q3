@@ -1,0 +1,19 @@
+int1 = int(input())
+int2 = int(input())
+
+def gcd(a, b):
+    while b:
+        a, b = b, a % b
+    return a
+
+def are_coprime(int1, int2):
+    greatest_common_divisor = gcd(int1, int2)
+    if greatest_common_divisor == 1:
+        return True
+    else:
+        return False
+
+if are_coprime(int1, int2):
+    print("Coprime")
+else:
+    print("Not Coprime")
